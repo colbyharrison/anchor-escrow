@@ -2,7 +2,7 @@ use anchor_lang::prelude::*;
 use anchor_spl::token::{self, CloseAccount, Mint, SetAuthority, TokenAccount, Transfer};
 use spl_token::instruction::AuthorityType;
 
-declare_id!("Hfd7V12kj9AENQjLpTozaPW6aT2rhPm3LSyjXZ5AbWH");
+declare_id!("75B5i8uVriKqsWXcvRupQBgaJZGyFEGvewJs4Rw5zZ3P");
 
 #[program]
 pub mod anchor_escrow {
@@ -16,6 +16,7 @@ pub mod anchor_escrow {
         initializer_amount: u64,
         taker_amount: u64,
     ) -> ProgramResult {
+        msg!("test");
         ctx.accounts.escrow_account.initializer_key = *ctx.accounts.initializer.key;
         ctx.accounts
             .escrow_account
